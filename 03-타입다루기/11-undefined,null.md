@@ -44,7 +44,7 @@ undefined === null     // false
 
 <br/><br/>
 
-##  null 과 undefined 숫자 변환
+##  null 과 undefined 숫자형 변환
 
 ### null -> 0, undefined -> NaN
 
