@@ -1,5 +1,11 @@
 # Default Case 고려하기
 
+유저에게서 데이터를 입력받는 경우 항상 올바른 형태의 데이터를 기대하기는 어렵다.
+
+따라서 `잘못된 데이터가 들`어오는 경우, `error를 표시`해주거나 `default 값을 설정`하여 올바른 데이터를 넣어주는 처리를 해야한다.
+
+<br/>
+
 ## 예시1 - `||(or)` -> default value 설정
 
 ```javascript
@@ -47,7 +53,7 @@ function registerDay(userInputDay) {
     case "토요일": // some code
     case "일요일": // some code
     default:
-      throw Error("입력값이 입력되지 않 았습니다.");
+      throw Error("입력값 존재 하지 않습니다.");
   }
 }
 
@@ -55,11 +61,16 @@ e.target.value = "월ㄹ요일";
 registerDay(e.target.value);
 ```
 
+switch문에서 `default`키워드로 `default 값 설정`하여 해당하는 case가 없는 경우를 처리한다.
+
+> switch문 / `default`: 매칭이 되는 케이스문이 없을때 실행되야 할 코드를 지정
+
+<br/>
 <br/>
 
-## 예시3 - React/switch(switch문으로 변하진 않음.)
+## 예시3 - React/switch(switch문 아님)
 
-```javascript
+```xml
 const Root = () => {
     <Router history={browerHistory}>
         <Switch>
@@ -71,9 +82,12 @@ const Root = () => {
 }
 ```
 
+React에서 사용자가 잘못된 url로 접속 시, **default component** 설정(`<Route component={NotFound}>`)으로 `error표시`한다.
+
+<br/>
 <br/>
 
-## 예시4 - 래핑, default case
+## 예시4 - 래핑
 
 ```javascript
 function safeParseInt(number, radix) {
@@ -81,11 +95,16 @@ function safeParseInt(number, radix) {
 }
 ```
 
-누군가 만든 코드도 래핑하여 dafault case 설정, -> 안전하게 코드 작성
+누군가 만든 코드도 `래핑`하여 `dafault case` 설정, -> **안전하게 코드 작성**
 
 <br/>
 <br/>
 
 ## 정리
 
-프론트 엔드 개발자라면 사용자의 실수를 예방하기 위해 default 값을 설정하자.
+프론트 엔드 개발자라면 `사용자의 실수를 예방`하기 위해 `default 값을 설정`하자.
+
+1. ||(or단축평가)
+2. switch/default
+3. React/Default-components
+4. 래핑
