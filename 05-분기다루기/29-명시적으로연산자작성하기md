@@ -1,0 +1,63 @@
+# 명시적으로 연산자 작성하기 [`()`]
+
+[연산자 우선 순위](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
+
+연산자는 우선 순위가 존재하며 우선순위가 높은 연산자가 먼저 실행된다.
+
+<br/>
+
+## 주제1 - 우선순위 `명시적`으로 작성하기
+
+```javascript
+console.log(3 + 10 * 2);
+console.log(3 + 10 * 2);
+```
+
+우선순위를 사람이 이해하기 쉽게 `괄호()` 구분하여 명시적으로 작성
+
+<br/>
+<br/>
+
+## 주제2 - 연산자 우선순위 `괄호()`로 변경
+
+```javascript
+//참고) 30-null병합연산자__예시3
+console.log(null || undefined ?? "foo") // SyntaxError
+
+console.log((null || undefined) ?? "foo") // foo
+```
+
+위의 예시에서 ||(or연산자)는 ??보다 우선순위가 낮다. 따라서 SyntaxError가 발생한다.
+
+`괄호()`를 통해 `||(or연산자)`를 우선적으로 처리하여 해결한다.
+
+<br/>
+<br/>
+
+## 주제3 - 증감연산자(++), 감소연산자(--) 사용 지양
+
+```javascript
+// 예측 가능하고 디버깅 하기 쉽게 작성
+//  number--; -> number = number - 1;
+
+let number;
+
+function decrement() {
+    // number--;
+    number = number - 1;
+}
+
+function increment()
+    // number++;
+    number = number + 1;
+```
+
+<br/>
+<br/>
+
+## 정리)
+
+- 연산자 우선순위를 `괄호()`를 통해 명시적으로 구분하여 이해하기 쉽게 작성하기
+- 낮은 순위연산자를 우선 처리해야하는 경우 `괄호()`를 사용하여 처리하기
+
+- 증감연산자(++), 감소연산자(--) 사용 지양하기
