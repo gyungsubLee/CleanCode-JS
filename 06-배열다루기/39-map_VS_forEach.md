@@ -2,12 +2,12 @@
 
 자바스크립트의 배열 메서드를 사용하면서 첫번쨰로 많이 하는 실수가 `map` 과 `forEach`의 정확한 사용법을 몰라 `map` or `forEach` 만 사용하는 것이다.
 
-따라서 해당하는 실수를 하지않기 위해 `map` 과 `forEach`를 비교하면서 정리한다.
+따라서 `map` 과 `forEach`의 차이점을 정리하면서 해당하는 메서드를 정확한 쓰임세를 이해하여 실수하지 않기위해 노력하자.
 
 <br/>
 <br/>
 
-## 차이점1 - return 유무
+## 차이점 - `return 유무`
 
 ```javascript
 const prices = ['1000', '2000', '3000' ];
@@ -20,7 +20,7 @@ console.log(newPricesForEach); // undefined
 console.log(newPricesMap); // ['1000', '2000', '3000' ]
 ```
 
-forEach -> ` ` return
+forEach -> `undefined` return
 
 map -> `new Array` return
 
