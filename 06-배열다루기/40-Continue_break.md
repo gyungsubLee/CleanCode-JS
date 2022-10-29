@@ -1,8 +1,8 @@
 # Continue & Break
 
-## 배열 메서드 사용 시 자주하는 실수2 - continue, break
+자바스크립트에서 배열메서드에 익숙해지면서 자주하는 실수로
 
-`배열 메서드(map, forEach ...)` 사용 시, for문에서 처럼 `루프를 중단`하기 위해 아래와 같이 `continue` 나 `break`을 사용하는 경우, `오류(SyntaxError)`가 발생한다.
+`배열 메서드(map, forEach ...)` 사용 시, for문에서 처럼 `루프를 제어`하기 위해 아래와 같이 `continue` 나 `break`을 사용하는 경우, `오류(SyntaxError)`가 발생한다.
 
 <br/>
 
@@ -14,14 +14,12 @@ orders.forEach(function(order) {
         continue; // SyntaxError
         break; // SyntaxError
     }
-
-    console.log(order);
 })
 ```
 
 <br/><br/>
 
-## try - catch 를 통한 해결
+## 1. try - catch 를 통한 해결
 
 ```javascript
 const orders = ['first', 'second', 'third'];
@@ -38,13 +36,15 @@ try {
 }
 ```
 
+try/catch를 사용하여` 특정 조건`에 `error를 던`지도록 하여 중간 `흐름(루프)을 제어`한다.
+
 <br/><br/>
 
-## for문 / for-of문 / for-in문
+## 2. for문 / for-of문 / for-in문
 
 해결 방법 중 하나로써 다시 for문을 사용하는 것이다.
 
-for문에서는 continue 와 breack 정상적으로 동작하기 때문에 의도한대로 흐름을 제어 할 수 있다.
+`for문`에서는 `continue` 와 `break`이 `정상`적으로 동작하기 때문에 의도한대로 `흐름(루프)을 제어 할` 수 있다.
 
 <br/>
 
@@ -70,9 +70,9 @@ for (const key in object) {
 
 <br/><br/>
 
-## 배열 메서드(`every()`, `some()`, `find()`, `findIndex()`)
+## 3. 배열 메서드(`every()`, `some()`, `find()`, `findIndex()`)
 
-해당하는 `배열메서드(every(), some(), find(), findIndex())`는 요소를 판별하여 true/false 여부에 따라 반`복(루프)의 종료 여부를 결정`한다.
+해당하는` 배열메서드`([every()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/every), [some()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/some), [find()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/find),[ findIndex()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex))는 배열의 요소를 판별하여 true/false 여부에 따라 `반복(루프)의 종료 여부를 결정`한다.
 
 <br/>
 <br/>
@@ -85,7 +85,8 @@ for (const key in object) {
 
 <br/>
 
-forEach, map 등 continue, break으로 루프 제어 불가능
+`forEach, map` 등 배열메서드들은
+`continue`, `break`을 사용이 `불가능`하기 때문에 배열의 중간의 흐름을 제어하기 어렵다.
 
 ### 해결방법
 
