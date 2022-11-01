@@ -65,7 +65,7 @@ const person = {
 
 `shorthand properties`: Object에서 `key명 과 value명이 같`을 시 `하나의 명으로 축약` 가능<br/>
 
-`Concise Method`: `key, value 구분 없(:)`이 함수(method) 선언 가능
+`Concise Method`: `key, value 구분(:) 없`이 함수(method) 선언 가능
 
 <br/>
 
