@@ -133,7 +133,7 @@ function getUserType(type) {
 }
 ```
 
-내부에 지역변수를 만들지 않고 바로 return 처리
+내부에 `지역변수를 만들지 않`고 `바로 return` 처리
 
 <br/>
 
