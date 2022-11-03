@@ -27,7 +27,7 @@ function getUserType(type) {
 
 production에서 실제 개발을 할때, 요구사항(조건)이 추가될 때마다 불필요한 코드가 늘어난다.
 
-따라서 business 커지면서, 해당하는 로직이 늘어나면서 유지보수도 어려우며 명시적이지 않다.
+business 커지면서, 해당하는 로직(if문)이 늘어나면서 유지보수도 어려우며 명시적이지 않다.
 
 <br/>
 <br/>
@@ -54,7 +54,7 @@ if문이 많을 시 switch/case문으로 리펙토링하는 것이 더 좋은 �
 <br/>
 <br/>
 
-## Best Case3 - Object LookUp Table
+## Best Case3 - Object `LookUp Table`
 
 ### ● Object LookUp Table
 
@@ -70,7 +70,7 @@ function getUserType(type) {
 }
 ```
 
-`Computed Property Name`을 사용한 `LookUp Table`을 통해 `유지보수가 간편`하고 더 `명시적`인 코드로 작성 가능하다.
+`상수` 와 `Computed Property Name`을 사용한 `LookUp Table`을 통해 `유지보수가 간편`하고 더 `명시적`인 코드로 작성 가능하다.
 
 <br/>
 
@@ -107,7 +107,7 @@ function getUserType(type) {
 }
 ```
 
-위와 같이 O`bject에 예외처리 로직을 추가`하면, 아래와 같이 `외부 모듈에서 해당 객체를 불`러올때 더 간편하게 로직을 작성할 수 있다.
+위와 같이 `Object에 예외처리 로직을 추가`하면, 아래와 같이 `외부 모듈에서 해당 객체를 불`러올때 더 간편하게 로직을 작성할 수 있다.
 
 ```javascript
 import USER_TYPE from "./constants/..some.js";
@@ -141,7 +141,7 @@ function getUserType(type) {
 
 ### `LookUp table`
 
-if문 or switch/case문 -> `LookUp table`(Object + computed property name)
+if문 or switch/case문 -> `LookUp table`(Object + 상수(const) + computed property name)
 
 Object 형태로 조건을 key, return 값을 value로 computed property name을 사용하여 획기적으로 로직을 줄일 수 있다.
 
