@@ -8,7 +8,7 @@ JavaScript를 사용함에 있어서 react, vue의 문법적인 구분에서 헷
 
 ## Computed Property name
 
-Computed Property name은 Object의` property`를 `동적`으로 `변수`처럼 사용 가능하게 한다.
+Computed Property name은 Object의 `property`를 `동적`으로 `변수`처럼 사용 가능하게 한다.
 
 <br/>
 
@@ -24,7 +24,7 @@ user[key] = value;
 console.log(user.name); // Atta
 ```
 
-`computed property name(ES6)` 전, 객체에서 `동적으로 property name`을 만들려면, 위 예시와 같이 `객체를 만`들고 `대괄호 표기법(`[]`)`을 사용하여 value를 할당 처리하였다.
+`computed property name 나오기 전(ES6 전)`, 객체에서 `동적으로 property name`을 만들려면, 위 예시와 같이 `객체를 만`들고 `대괄호 표기법([])`을 사용하여 value를 할당 처리를 해야됐다.
 
 <br/>
 
@@ -41,9 +41,9 @@ const user = {
 console.log(user.name); // Atta
 ```
 
-ES6+ 부터는 `computed property name`을 사용하여 `동적 property`를 `객체 안`에서 더 간편하게 작성할 수 있다.
+그러나 ES6+ 부터는 `computed property name`을 사용하여 `동적 property`를 `객체 안`에서 간편하게 작성할 수 있게 되었다.
 
-위 예시와 같이 객체의 `key`에 `대괄호 표기법(`[]`)`을 사용하여 `property`를 `변수`처럼 동적으로 할당 가능하다.
+따라서 위 예시와 같이 객체의 `key`에 `대괄호 표기법([])`을 사용하여 `property`를 `변수`처럼 `동적으로 할당` 가능하다.
 
 <br/>
 
@@ -114,13 +114,11 @@ export default SomeComponent;
 
 ![image](https://user-images.githubusercontent.com/95308384/199219957-22dd431c-dff8-458c-ac90-b2b70d2a3a1f.png)
 
-위 예시와 같이 event argument를 통해 해당 DOM에 접근하여 ... ?
-
-> 아래의 표현이 정확히 이해 안감... computed property name을 사용해야만 할당할 수 있나?
->
-> -> computed property name을 사용하여 객체에 변수 값 가져올 수 있다? (굳이 안써도 되지 않나?... 나중에 다시 정리)
+위 예시와 같이 `event argument`를 통해 해당 `DOM property에 접근`하여 `동적 할당` 처리
 
 `Computed property name([])`을 사용하여 동적으로 계산된 값을 속성으로 다를 수 있다.
+
+> 동적으로 계산된 값이 무엇인지 정확하게 이해가 안간다...
 
 <br/><br/>
 
@@ -134,6 +132,9 @@ const reducer = handleActions(
     [noop]: (state, action) => ({
       counter: state.counter + action.payload,
     }),
+    //  [noop] (state, action) ({
+    //    ounter: state.counter + action.payload,
+    //  }),
   },
   { counter: 0 }
 );
@@ -154,11 +155,17 @@ const store = new Vuex.Store({
     // some code...
   },
   mutations: {
-    // 함수명 / 매개변수 / 함수 Body
+    // 함수명 / 매개변수 / 함수 Body <- 함수와 동일
     [SOME_MUTATION](state) {},
   },
 });
 ```
+
+`consise method( ': funtion' 제거)` + `computed property method([])`
+
+따라서
+
+`[ computed property method ]` `( parameter )` `{ function body }` -> `함수`와 동일하게 동작함
 
 <br/><br/>
 
@@ -187,6 +194,8 @@ for (let i = 0; i < 3; i++) {
 // func0  func1  func2
 ```
 
+`consise method( ': funtion' 제거)` + `computed property method([])`
+
 <br/>
 <br/>
 
@@ -194,12 +203,9 @@ for (let i = 0; i < 3; i++) {
 
 ● Computed property name<br/>
 
-ES6+ 부터 사용 가능한 문법으로 `동적 property(변수)`를 더 편리하게 객체 안에서 작성하게 함.
+ES6+ 부터 사용 가능한 문법으로 `동적 property(변수)`를 더 편리하게 객체 안에서 작성 가능하게 함.
 
 <br/>
-
-강의에 대한 예시가 이해가 가지 않음...
-안써도 사용 가능하지 않나? 후에 다시 정리하기...
 
 <br/>
 
