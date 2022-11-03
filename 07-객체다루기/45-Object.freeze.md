@@ -1,0 +1,1 @@
+# 45. Object.freeze

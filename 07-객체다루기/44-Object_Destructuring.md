@@ -1,4 +1,4 @@
-# Object Destructuring (객체 분해)
+# 44. Object Destructuring (객체 분해)
 
 > Destructuring(분해), 구조 분해 할당(destructuring assignment)
 
