@@ -1,4 +1,4 @@
-# 42 - Computed Property Name
+# 42. Computed Property Name
 
 JavaScript를 사용함에 있어서 react, vue의 문법적인 구분에서 헷갈려 실수를 한다.
 

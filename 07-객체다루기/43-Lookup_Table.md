@@ -1,4 +1,4 @@
-# 43 - Lookup Table
+# 43. Lookup Table
 
 ![image](https://user-images.githubusercontent.com/95308384/199480157-e433528d-ab19-4d5a-9f20-0eb7d5f6231f.png)
 
