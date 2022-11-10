@@ -43,9 +43,9 @@ JavaScript에서는 기본 데이터 타입인 boolean, number, string... 그리
 
 ## 프로토타입의 응용
 
-> 함수(function), new 키워드도 프로토타입이다. (new 연산자도 prototype 맞나?)
-
 자바스크립에서는 클래스는 없지만 함수(function)와 new 키워드를 통해 클래스를 흉내낼 수 있다.
+
+> 함수(function), new 키워드도 프로토타입이다.<br/> (new 연산자도 prototype 맞나?)
 
 ```javascript
 function Person() {
@@ -127,7 +127,7 @@ var obj = new Object();
 
 <br/>
 
-> ### ▶ point 2 - 해당 함수로 생성도니 객체에 Constructor(생성자) 자격 부여
+> ### ▶ point 2 - 해당 함수로 생성된 객체에 Constructor(생성자) 자격 부여
 
 Constructor 자격이 부여되면 new 키워드를 통해 객체를 만들 수 있다. 이것이 함수만 new 키워드를 사용할 수 있는 이유이다.
 
@@ -146,7 +146,7 @@ Constructor 자격이 부여되면 new 키워드를 통해 객체를 만들 수 
 
 ![image](https://user-images.githubusercontent.com/95308384/200304573-d85ff776-791b-4af3-8a87-e87dba781707.png)
 
-함수로 생성된 객체에서는 contructor 자격이 부여되 new 키워드로 인스턴스를 정상적으로 생성한다.
+함수로 생성된 객체에서는 contructor 자격이 부여돼 new 키워드로 인스턴스를 정상적으로 생성한다.
 
 따라서 `함수를 통해서 생성된 객체`에 `constructor 자격이 부여`되며, 이를 통해서만 new 키워드를 통해 인스턴스를 생성할 수 있다.
 
@@ -167,7 +167,7 @@ Constructor 자격이 부여되면 new 키워드를 통해 객체를 만들 수 
 ![image](https://user-images.githubusercontent.com/95308384/200160709-b1c315fb-1778-447a-ac0f-6be3db4a927d.png)
 
 위 그림과 같이 `Person.prototype`을 통해
-`Prototype Object` 접근 가능한 것을 확인 할 수 있으며 `Prototype Object`는 같`이 생성되었던 함수를 가리키는 constructor`와 `Prototype Link인 [[Prototype]](이전엔 __proto__)`을 속성으로 가진다.
+`Prototype Object` 접근 가능한 것을 확인 할 수 있으며 `Prototype Object`는 같이 생성되었던 함수를 가리키는 constructor`와 `Prototype Link인 [[Prototype]](이전엔 **proto**)`을 속성으로 가진다.
 
 <br/>
 
@@ -200,30 +200,36 @@ kim과 park은 Person 함수를 통해 생성되었으니 Person.prototype을 �
 
 ![image](https://user-images.githubusercontent.com/95308384/200314758-2070a743-8646-453e-b08f-4f50552c069e.png)
 
-kim에는 eyes라는 속성이 없는데도 kim.eyes를 실행하면 2라는 값을 참조하는 것을 볼 수 있다. 위에서 설명했듯이 Prototype Object에 존재하는 eyes 속성을 참조한 것인데, Prototype Link인 `[[Prototype]]`을 통해 가능하다.
+kim에는 eyes라는 속성이 없는데도 kim.eyes를 실행하면 2라는 값을 참조하는 것을 볼 수 있다. 위에서 설명했듯이 Prototype Object에 존재하는 eyes 속성을 참조한 것인데, `Prototype Link`인 `[[Prototype]](__proto__)`을 통해 가능하다.
 
-prototype 속성은 함수만 가지고 있던 것과는 달리(Person.prototype)
-`[[Prototype]]` 속성은 모든 객체가 빠짐없이 가지고 있는 속성이다.
+prototype 속성은 함수만 가지고 있던 것(Person.prototype)과는 달리
 
-`[[Prototype]]`는 객체가 생성될 때 조상이었던 함수의 Prototype Object를 가리킨다.
+`Prototype Link([[Prototype]])`는 `모든 객체가 빠짐없이 가지`고 있는 속성이며 객체가 생성될 때 `조상이었던 함수의 Prototype Object`를 가리킨다.
 
 kim객체는 Person함수로부터 생성되었으니 Person 함수의 Prototype Object를 가리키고 있는 것이다.
 
-`[[Prototype]]`를 까보니 역시 Person 함수의 Prototype Object를 가리키고 있었습니다.
+`kim.__proto__`를 출력해보면 아래와 같이 `조상 객체인 Person`을 가리키고 있는 것을 알 수 있다.
+
+![image](https://user-images.githubusercontent.com/95308384/201077571-92639104-3c22-4c7c-9c7c-51ae0a909313.png)
 
 ![image](https://user-images.githubusercontent.com/95308384/200315408-c67c4dc0-a926-4b67-aeb0-32baab6954c4.png)
 
 ![image](https://user-images.githubusercontent.com/95308384/200315444-877d70fa-049d-4647-874f-d73ffac345f0.png)
 
-로토타입 체인 구조 때문에 모든 객체는 Object의 자식이라고 불리고, Object Prototype Object에 있는 모든 속성을 사용할 수 있다.
-
-한 가지 예를 들면 toString함수가 있으며
+이러한 `prototype link([[Prototype]])`를 통해 `체인 구조`가 형성되어 `체이닝`을 사용하여 `Object Prototype Object에 있는 모든 속성을 사용`할 수 있고 `모든 객체가 Object의 자식`임을 확인할 수 있다.
 
 ![image](https://user-images.githubusercontent.com/95308384/200315563-549017c9-7802-4ce8-911d-5e446998934f.png)
 
-`[[Prototype]]`와 프로토타입 체인을 이해하는 것이 네 번째 포인트이다.
+이러한 `prototype link([[Prototype]])`와 `프로토타입 체인`을 이해하는 것이 네 번째 포인트이다.
 
 <br/>
+<br/>
+
+> 이해하는데는 그리 오래걸리지 않았지만 정리하는데는 참 오래걸렸다... <br/>
+> 아직도 부족한 표현들이 많이 보이니 계속해서 수정해나가야 할 듯 하다...<br/>
+> 1차 작성 - 11월 7일<br/>
+> 2차 작성 - 11월 10일<br/>
+
 <br/>
 
 ---
