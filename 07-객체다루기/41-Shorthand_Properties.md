@@ -71,7 +71,7 @@ const person = {
 
 ### 의문점)
 
-익명합수(arrow func)도 값으로써 `Shorthand Properties`처럼 축약 가능하나, 외부에 선언된 변수를 참조하여 해당하는 객체의 변수를 가져오지 못함.
+익명 함수(or Arrow Function)도 값으로써 `Shorthand Properties`처럼 축약 가능하나, 외부에 선언된 변수를 참조하여 해당하는 객체의 변수를 가져오지 못함.
 
 > 🤔 그럼 this가 참조하는 객체는 뭐지? -> 의문점 해결 안됨.
 

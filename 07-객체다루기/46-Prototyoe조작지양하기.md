@@ -12,6 +12,8 @@ Prototype 조작을 지양해야하는 이유는 초창기와 달리 이미 자�
 
 <br/>
 
+## Case1 - Class [ 과거 -> 현재 ]
+
 ### 예전 코드 [ 클래스 -> 생성자 함수, prototype 조작 사용]
 
 ```javascript
@@ -90,7 +92,7 @@ prototype을 조작하는 것이 아닌 `JavaScript 모듈`을 가져와서 조�
 
 ![image](https://user-images.githubusercontent.com/95308384/201086591-7713a50b-14f2-4fd4-a514-a9a099a837f0.png)
 
-class -> babel로 transfile 시 prototype으로 동작하는 것을 확인 가능하다. 자세한 내용은 [정리한 protptype](prototype.md) 확인
+class -> babel로 transfile 시 prototype으로 동작하는 것을 확인 가능하다. 자세한 내용은 [protptype 이해하기](prototype.md) 확인
 
 <br/>
 <br/>
@@ -101,9 +103,9 @@ class -> babel로 transfile 시 prototype으로 동작하는 것을 확인 가�
 >
 > 이미 JS는 많이 발전했다. 따라서 `빌트인 메소드`를 사용하는 것이 가장 안전하고 명시적이다.
 >
-> > 직접 만들어서 모듈화 => 배포 => NPM
+> > 직접 만들어서 모듈화 => 배포 => NPM (해당 내용 아직 이해 안됨.)
 >
-> JS 빌트인 객체를 건들지말자
+> JS 빌트인 객체(prototype)를 건들지말자
 
 <br/>
 
