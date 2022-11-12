@@ -1,6 +1,7 @@
 # ProtoType 이해하기
 
 > `__proto__` -> `[[Prototype]]` 변경
+> [`Object.prototype.__proto__`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto)는 더이상 권장되지 않음.
 
 > ### ● keyword
 >
