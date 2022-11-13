@@ -4,7 +4,7 @@ Nullish coalescing operator(null 병합 연산자, ??)은 `null` 과 `undefined`
 
 <br/>
 
-## 예시1 - `!! -> ??`
+## 예시1 - `||` -> `??`
 
 ```javascript
 function createElement(type, height, width) {
