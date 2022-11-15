@@ -120,4 +120,4 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/argumen
 https://developer.mozilla.org/en-US/docs/Glossary/Parameter<br/>
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/rest_parameters<br/>
 https://developer.ozilla.org/ko/docs/Web/JavaScript/Reference/Functions/arguments<br/>
-https://www.udemy.com/course/clean-code-js/learn/lecture/29946846#announcementsr<br/>
+https://www.udemy.com/course/clean-code-js/learn/lecture/29946846#announcementsr<br/>``
