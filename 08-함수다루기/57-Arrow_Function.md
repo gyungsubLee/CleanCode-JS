@@ -2,7 +2,7 @@
 
 함수를 표현식으로 간결하게 작성하는 화살표 함수가 존재한다.
 
-이러한 화살표 함수를 맹목적으로 사용하는 경우, 예상치 못한 Error가 발생한다.
+이러한 화살표 함수를 맹목적으로 사용하는 경우, 예상치 못한 Error가 발생할 수 있다.
 
 <br/>
 
@@ -127,9 +127,38 @@ class Child extends Parent {
   }
 }
 
-new Child().childMethod();
-new Child().overrideMethod();
+new Child().childMethod(); // (inter)
+new Child().overrideMethod(); // Parent
 ```
+
+Arrow Function 생성자 함수 내부에서 구현 시 바로 초기화가 된다. 따라서 Arrow Function으로 만든 this와 Class의 Method는 Error를 반환한다.
+
+<br/>
+
+```javascript
+    .  .  .
+
+// 일반 함수로 작성
+  overrideMethod = () {
+    return "Parent";
+  };
+}
+
+class Child extends Parent {
+  childMethod() {
+    super.parentMethod();
+  }
+
+  overrideMethod() {
+    return "Child";
+  }
+}
+
+
+new Child().overrideMethod(); // Child
+```
+
+위와 같이 일반 함수로 작성 시 정상적으로 값이 출력된다.
 
 <br/>
 <br/>
