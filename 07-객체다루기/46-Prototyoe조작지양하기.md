@@ -1,6 +1,6 @@
 # 46. ProtoType 조작 지양하기
 
-> [ProtoType](prototype.md) 정리
+> [ProtoType](50-prototype.md) 정리
 
 <br/>
 
@@ -92,7 +92,7 @@ prototype을 조작하는 것이 아닌 `JavaScript 모듈`을 가져와서 조�
 
 ![image](https://user-images.githubusercontent.com/95308384/201086591-7713a50b-14f2-4fd4-a514-a9a099a837f0.png)
 
-class -> babel로 transfile 시 prototype으로 동작하는 것을 확인 가능하다. 자세한 내용은 [protptype 이해하기](prototype.md) 확인
+class -> babel로 transfile 시 prototype으로 동작하는 것을 확인 가능하다. 자세한 내용은 [protptype 이해하기](50-prototype.md) 확인
 
 <br/>
 <br/>
